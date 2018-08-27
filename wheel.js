@@ -1,5 +1,5 @@
 
-var game = new Phaser.Game(600, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render  }, false, false);
+var game = new Phaser.Game(800, 800, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render  }, false, false);
 
 function preload() {
 
@@ -34,6 +34,9 @@ function create() {
 
 	wheel.pivot.x=110;
 	wheel.pivot.y=110;
+	wheel.scale.x = 3;
+	wheel.scale.y = 3;
+	
 	// wheel.x=200;
 	// wheel.y=200;
 	
@@ -88,7 +91,7 @@ function update()
 
 function spinTheWheel() {
 	if (wheel.body.angularVelocity == 0){ 
-		wheel.body.angularVelocity = 500 + (Math.random() * 100);
+		wheel.body.angularVelocity = 1500 + (Math.random() * 100);
 	}
 
 	
