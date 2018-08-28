@@ -4,7 +4,7 @@ var game = new Phaser.Game(800, 800, Phaser.CANVAS, 'phaser-example', { preload:
 function preload() {
 
 	game.load.spritesheet('wheel_sprite', 'wheelbig.png', 1100, 1100);
-
+	game.load.spritesheet('clicker_sprite', 'clicker.png', 64, 64);
 
 }
 
@@ -14,6 +14,8 @@ var DEBUG_MODE = false;
 
 var score = 0;
 var wheel;
+var clicker_sprite;
+
 
 var otherTextBubbleLetters;
 var bubbleDict = { 	"A":33,"B":34,"C":35,"D":36,"E":37,"F":38, 
@@ -42,6 +44,11 @@ function create() {
 	
 	
 	//wheel.body.velocity.x=100;
+
+
+	clicker = game.add.sprite(game.world.centerX, game.world.centerY-280, 'clicker_sprite');
+	clicker.pivot.x=32;
+	clicker.pivot.y=8;
 }
 
 function makeWord(x,y,textString)
@@ -84,6 +91,14 @@ function update()
 {
 	//game.input.onDown.add(gofull, this);
 	game.input.onDown.add(spinTheWheel, this);
+
+	if (wheel.body.angularVelocity != 0){ 
+		clicker.angle = -32 + (Math.random()*64);
+	}
+	else
+	{
+		clicker.angle = 0;
+	}
 
 }
 
