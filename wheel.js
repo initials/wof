@@ -32,7 +32,7 @@ function create() {
 	game.physics.enable(wheel, Phaser.Physics.ARCADE);
 	//wheel.body.angularVelocity = 1300 + (Math.random() * 100);
 
-	wheel.body.angularDrag = 300;
+	wheel.body.angularDrag = 350;
 
 	wheel.pivot.x=550;
 	wheel.pivot.y=550;
