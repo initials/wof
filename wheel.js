@@ -3,7 +3,7 @@ var game = new Phaser.Game(800, 800, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-	game.load.spritesheet('wheel_sprite', 'wheel.png', 220, 220);
+	game.load.spritesheet('wheel_sprite', 'wheelbig.png', 1100, 1100);
 
 
 }
@@ -26,16 +26,16 @@ var bubbleDict = { 	"A":33,"B":34,"C":35,"D":36,"E":37,"F":38,
 				};
 
 function create() {
-	wheel = game.add.sprite(game.world.centerX, game.world.centerY, 'wheel_sprite');
+	wheel = game.add.sprite(game.world.centerX, game.world.centerY+300, 'wheel_sprite');
 	game.physics.enable(wheel, Phaser.Physics.ARCADE);
 	//wheel.body.angularVelocity = 1300 + (Math.random() * 100);
 
 	wheel.body.angularDrag = 300;
 
-	wheel.pivot.x=110;
-	wheel.pivot.y=110;
-	wheel.scale.x = 3;
-	wheel.scale.y = 3;
+	wheel.pivot.x=550;
+	wheel.pivot.y=550;
+	//wheel.scale.x = 3;
+	//wheel.scale.y = 3;
 	
 	// wheel.x=200;
 	// wheel.y=200;
